@@ -1,7 +1,9 @@
 <?php
-
-
-function index()
+class HomeController
 {
-    require 'view/home/index.html.php';
+
+    function index()
+    {
+        require 'view/home/index.html.php';
+    }
 }
