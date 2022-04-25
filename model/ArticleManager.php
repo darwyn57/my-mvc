@@ -26,7 +26,7 @@ class ArticleManager extends Manager
         $req->execute([
             'id' => $id
         ]);
-        $article = $req->fetch;
+        $article = $req->fetch();
         return $article;
     }
     function addArticle(string $title, string $content): void

@@ -18,7 +18,7 @@
     <tbody>
         <?php foreach ($articles as $article) : ?>
             <tr>
-                <th scope="row"><?= $article['id'] ?></th>
+                <th scope="row"><?= $article->getAll() ?></th>
                 <td> <a href="/?controller=blog&action=article&id=<?= $article['id'] ?>"><?= $article['title'] ?></a>
                 </td>
                 <td><?= $article['created_at'] ?></td>

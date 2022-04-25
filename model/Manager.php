@@ -1,6 +1,6 @@
 <?php
 
-abstract class Manager
+class Manager
 {
     protected static $pdo = NULL;
 

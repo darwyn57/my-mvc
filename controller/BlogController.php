@@ -36,8 +36,6 @@ class BlogController
     {
         $articleManager = new ArticleManager();
         $article = $articleManager->getById($_GET['id']);
-
-
         require 'view/blog/updatearticle.html.php';
     }
     public function insertmodife()
