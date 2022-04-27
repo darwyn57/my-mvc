@@ -39,7 +39,7 @@ class CommentManager extends Manager
             'article_id' => $article_id
         ]);
     }
-    function updateComment(string $content, int $article_id): void
+    function updateComment(string $content, int $article_id)
     {
         $sql = "UPDATE comment SET content = :content WHERE article_id = :article_id";
         $req = $this->getPdo()->prepare($sql);
@@ -50,7 +50,7 @@ class CommentManager extends Manager
         ]);
     }
 
-    function deleteComment($id)
+    function deleteComment(int $id)
     {
 
         $sql = "DELETE FROM comment WHERE id = :id";

@@ -7,8 +7,15 @@
 
 <?php foreach ($comArticle as $comment) : ?>
     <div class="mx-5">
-        <h3 class="mx-5"><?= $comment['author'] ?></h3>
+        <h3 class="mx-5">Commentaire de: <?= $comment['author'] ?></h3>
         <p><?= $comment['content'] ?></p>
+        <p>crée le: <?= $comment['created_at'] ?></p>
+
+        <form action="/?controller=blog&action=deleteCom" method="POST">
+            <input type="hidden" name="article_id" value="<?= $article['id'] ?>" />
+            <input type="hidden" name="id" value="<?= $comment['id'] ?>" />
+            <input type="submit" name="submit" value="🚮" /></input>
+        </form>
     </div>
 <?php endforeach; ?>
 
