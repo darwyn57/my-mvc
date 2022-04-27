@@ -26,15 +26,15 @@ if (file_exists('controller/' . ucfirst($controller) . 'Controller.php')) {
         } else {
 
             header('HTTP/1.1 404 not found');
-            echo 'Erreur 404 Not Found';
+            echo 'Erreur1 404 Not Found';
         }
     } else {
 
         header('HTTP/1.1 404 not found');
-        echo 'Erreur 404 Not Found';
+        echo 'Erreur2 404 Not Found';
     }
 } else {
 
     header('HTTP/1.1 404 not found');
-    echo 'Erreur 404 Not Found';
+    echo 'Erreur3 404 Not Found';
 }

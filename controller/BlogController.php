@@ -22,17 +22,23 @@ class BlogController
 
     public function article()
     {
-        $comments = $this->commentManager->getAllComments();
-        $comment = $this->commentManager->getCommentById($_GET['id']);
+        // $comments = $this->commentManager->getAllComments($_GET['id']);
+        $comArticle = $this->commentManager->getCommentById($_GET['id']);
         $article = $this->articleManager->getById($_GET['id']);
         require 'view/blog/article.html.php';
     }
     public function newArticle()
     {
 
-        $comment = $this->commentManager->addComment($_POST['content'], $_POST['author'], $_POST['article_id']);
+
         $article = $this->articleManager->addArticle($_POST['title'], $_POST['content']);
         header('Location: /?controller=blog');
+    }
+
+    public function ajoutComment()
+    {
+        $comment = $this->commentManager->addComment($_POST['content'], $_POST['author'], $_POST['article_id']);
+        header('Location: /?controller=blog&action=article&id=' . $_POST['article_id']);
     }
     public function showform()
     {
