@@ -1,4 +1,3 @@
-<?php include 'view/partials/-top.html.php'; ?>
 <div class="mx-5">
     <h1><?= $article['title'] ?></h1>
     <h3><?= $article['content'] ?></h3>
@@ -38,11 +37,3 @@
 
     </div>
 </form>
-
-
-
-
-
-
-
-<?php include 'view/partials/-bottom.html.php'; ?>

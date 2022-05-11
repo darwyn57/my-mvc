@@ -9,8 +9,8 @@ if (!empty($_GET['controller'])) {
 
 
 // on verifie si le fichier existe 
-if (file_exists('controller/' . ucfirst($controller) . 'Controller.php')) {
-    require 'controller/' . ucfirst($controller) . 'Controller.php';
+if (file_exists('../src/controller/' . ucfirst($controller) . 'Controller.php')) {
+    require '../src/controller/' . ucfirst($controller) . 'Controller.php';
 
     if (!empty($_GET['action'])) {
         $action = $_GET['action'];

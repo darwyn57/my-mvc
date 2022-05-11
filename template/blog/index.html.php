@@ -1,7 +1,3 @@
-<?php include  'view/partials/-top.html.php'; ?>
-
-
-
 <h1>Page d'acceuil du blog</h1>
 
 <button type="button" class="btn btn-outline-danger ms-5"><a href="/?controller=blog&action=showform">Nouvelle article</a></button>
@@ -35,7 +31,7 @@
 
 
 
-<?php include 'view/partials/-bottom.html.php'; ?>
+
 
 
 

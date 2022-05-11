@@ -1,7 +1,9 @@
 <!-- require de l'ArticleManager pour utiliser les fonction -->
 <?php
-require 'model/CommentManager.php';
-require 'model/ArticleManager.php';
+require_once '../src/manager/CommentManager.php';
+require_once '../src/manager/ArticleManager.php';
+require_once '../core/View.php';
+
 
 class BlogController
 {
@@ -16,7 +18,14 @@ class BlogController
     {
         $comments = $this->commentManager->getAllComments();
         $articles = $this->articleManager->getAll();
-        require 'view/blog/index.html.php';
+        $path = "blog/index";
+        $data = [
+            "articles" => $articles,
+            "comments" => $comments
+        ];
+        $layout = 'base.html.php';
+        $viewIndex = new View($path, $data, $layout);
+        $viewIndex->render();
     }
 
 
@@ -25,7 +34,14 @@ class BlogController
 
         $comArticle = $this->commentManager->getCommentById($_GET['id']);
         $article = $this->articleManager->getById($_GET['id']);
-        require 'view/blog/article.html.php';
+        $path = "blog/article";
+        $data = [
+            "comArticle" => $comArticle,
+            "article" => $article
+        ];
+        $layout = 'base.html.php';
+        $viewArticle = new View($path, $data, $layout);
+        $viewArticle->render();
     }
     public function newArticle()
     {
@@ -43,15 +59,21 @@ class BlogController
     public function showform()
     {
 
-        require 'view/blog/new-article.html.php';
+        $path = "blog/new-article";
+        $data = [];
+        $layout = 'base.html.php';
+        $viewForm = new View($path, $data, $layout);
+        $viewForm->render();
     }
     public function modifie()
 
     {
-
-
         $article = $this->articleManager->getById($_GET['id']);
-        require 'view/blog/updatearticle.html.php';
+        $path = "blog/updatearticle";
+        $data = ["article" => $article];
+        $layout = 'base.html.php';
+        $modifie = new View($path, $data, $layout);
+        $modifie->render();
     }
     public function insertmodife()
     {
@@ -61,8 +83,6 @@ class BlogController
     }
     public function delete()
     {
-
-
         $article = $this->articleManager->deleteArticle($_GET['id']);
         header('Location: /?controller=blog');
     }

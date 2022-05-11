@@ -1,6 +1,6 @@
 <?php
 
-require_once 'model/Manager.php';
+require_once '../core/Manager.php';
 class ArticleManager extends Manager
 {
 

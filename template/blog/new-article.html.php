@@ -1,4 +1,3 @@
-<?php include 'view/partials/-top.html.php'; ?>
 <div class="container">
 
 
@@ -24,6 +23,3 @@
     <?php endif; ?>
 
 </div>
-
-
-<?php include 'view/partials/-bottom.html.php'; ?>
