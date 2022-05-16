@@ -23,8 +23,7 @@ class BlogController
             "articles" => $articles,
             "comments" => $comments
         ];
-        $layout = 'base.html.php';
-        $viewIndex = new View($path, $data, $layout);
+        $viewIndex = new View($path, $data);
         $viewIndex->render();
     }
 
@@ -39,8 +38,7 @@ class BlogController
             "comArticle" => $comArticle,
             "article" => $article
         ];
-        $layout = 'base.html.php';
-        $viewArticle = new View($path, $data, $layout);
+        $viewArticle = new View($path, $data);
         $viewArticle->render();
     }
     public function newArticle()
@@ -61,8 +59,7 @@ class BlogController
 
         $path = "blog/new-article";
         $data = [];
-        $layout = 'base.html.php';
-        $viewForm = new View($path, $data, $layout);
+        $viewForm = new View($path, $data);
         $viewForm->render();
     }
     public function modifie()
@@ -71,8 +68,7 @@ class BlogController
         $article = $this->articleManager->getById($_GET['id']);
         $path = "blog/updatearticle";
         $data = ["article" => $article];
-        $layout = 'base.html.php';
-        $modifie = new View($path, $data, $layout);
+        $modifie = new View($path, $data);
         $modifie->render();
     }
     public function insertmodife()
